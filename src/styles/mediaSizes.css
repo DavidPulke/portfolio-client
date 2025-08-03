@@ -1,0 +1,44 @@
+/* medium screen size */
+@media (max-width: 1076px) {
+
+    /* users */
+    main.home {
+        width: 90%;
+        justify-content: center;
+    }
+}
+
+
+/* tablet screen size */
+@media (max-width: 676px) {
+
+    /* about */
+    body .about {
+        width: 250px;
+
+        & .more-info {
+            display: none;
+        }
+
+        .extend-btn {
+            display: block;
+            background-color: transparent;
+            color: var(--second-text-color);
+            margin-top: 1px;
+            font-size: 0.9rem;
+            outline: none;
+            border: none;
+        }
+    }
+}
+
+
+/* smaller screen size */
+@media (max-width: 576px) {
+
+    /* users */
+    .user-card {
+        margin: 0 auto;
+        max-height: 400px;
+    }
+}

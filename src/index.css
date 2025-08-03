@@ -1,0 +1,87 @@
+/* font awesome */
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css";
+
+/* bootstrap */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+/* Sour + Gummy font */
+@import 'https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap';
+
+
+
+
+/* styling */
+@import "./styles/navbar.css";
+@import "./styles/mediaSizes.css";
+@import "./styles/home.css";
+@import "./styles/projects.css";
+@import "./styles/contact.css";
+
+
+
+:root {
+  --dark-bgc: #222831;
+  --second-dark: #393E46;
+  --light-bgc: #00ADB5;
+  --text-color: #EEEEEE;
+  --second-text-color: #8a72f7;
+}
+
+
+
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  appearance: none;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--dark-bgc);
+  background-image: url("/images/background.jpg");
+  color: var(--text-color);
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+
+.App {
+  width: 100%;
+  min-height: 100lvh;
+  background-position: cover;
+  font-family: Sour Gummy, Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--dark-bgc);
+  background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  cursor: default;
+}
+
+i {
+  cursor: pointer;
+}
+
+strong {
+  text-shadow: 0 0 3px var(--light-bgc);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
