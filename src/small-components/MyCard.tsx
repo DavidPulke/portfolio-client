@@ -21,7 +21,10 @@ const MyCard: FunctionComponent<MyCardProps> = () => {
     };
 
     return (<div className="user-card mb-3">
-        <img src={"/images/IconDavid.jpg"} alt={"My Icon"} />
+        <div className="resume">
+            <a href="/DavidPolak-CV(Edited).pdf" download={"/DavidPolak-CV(Edited).pdf"}>CV</a>
+        </div>
+        <img src={"/images/Myself.jpeg"} alt={"My Icon"} />
         <div className="user-data">
             <h4><strong>Name: </strong>David Polak</h4>
             <div>
