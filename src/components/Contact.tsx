@@ -3,6 +3,7 @@ import { useState, type FunctionComponent } from "react";
 import { type NavigateFunction, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { successMsg, errorMsg } from "../services/feedback";
+import { sendMessage } from "../services/messages";
 
 interface ContactProps { }
 
@@ -12,13 +13,13 @@ const Contact: FunctionComponent<ContactProps> = () => {
 
     const formik: FormikValues = useFormik<any>({
         initialValues: {
-            fullName: "",
+            name: "",
             email: "",
-            subject: "", // עכשיו select
+            subject: "",
             message: "",
         },
         validationSchema: yup.object({
-            fullName: yup
+            name: yup
                 .string()
                 .required("Full name is required")
                 .min(2, "Full name must be at least 2 characters"),
@@ -37,7 +38,8 @@ const Contact: FunctionComponent<ContactProps> = () => {
         }),
         onSubmit: async (values) => {
             try {
-                console.log("Form Submitted:", values);
+                await sendMessage(values)
+
                 successMsg("Your message has been sent!");
                 formik.resetForm();
                 navigate('/');
@@ -66,13 +68,13 @@ const Contact: FunctionComponent<ContactProps> = () => {
                         id="floatingInputName"
                         placeholder="John Doe"
                         onChange={formik.handleChange}
-                        name="fullName"
+                        name="name"
                         onBlur={formik.handleBlur}
-                        value={formik.values.fullName}
+                        value={formik.values.name}
                     />
                     <label htmlFor="floatingInputName">Full Name *</label>
-                    {formik.touched.fullName && formik.errors.fullName && (
-                        <small className="error">{formik.errors.fullName}</small>
+                    {formik.touched.name && formik.errors.name && (
+                        <small className="error">{formik.errors.name}</small>
                     )}
                 </div>
 
